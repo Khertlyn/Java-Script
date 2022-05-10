@@ -1,0 +1,17 @@
+Linguagem interpretada
+
+Para comentar uma linha //
+Para comentar mais de uma linha utilizar 
+/* */ atalho ctrl+/
+
+constante e variável = constante declarar em maiúscula
+
+node JS
+
+sintaxe declarar função
+function soma(a, b){
+	console.log(a + b); //usado para visualizar resultado
+	return a + b; //usado para manipular resultado
+}
+soma(3,5);
+
