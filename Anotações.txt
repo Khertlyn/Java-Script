@@ -4,8 +4,6 @@ Para comentar uma linha //
 Para comentar mais de uma linha utilizar 
 /* */ atalho ctrl+/
 
-constante e variável = constante declarar em maiúscula
-
 node JS
 
 sintaxe declarar função
@@ -14,4 +12,110 @@ function soma(a, b){
 	return a + b; //usado para manipular resultado
 }
 soma(3,5);
+
+para executar um arquivo no terminal utilizar node
+
+arquitetura é como está desenhado a estrutura
+
+assets = pasta de arquivos não html (ex. js e css)
+
+DOM - Estrutura dos elementos dentro da janela (Document Object Model)
+
+
+sintaxe e operadores
+% resto da operação
+** exponencial
+++ incrementar
+-- decrementar
+Comparação
+== pergunta se o valor é igual
+=== mesmo valor e mesmo tipo
+!=diferente
+!== valor e tipo diferente
+>maior que 
+
+usados em condições
+&& e lógico
+|| ou (qualquer um dos dois)
+! não
+
+sintaxe
+if(condition)
+	statement;
+else
+	statement;
+
+
+algumas padronizações de variáveis
+camelCase usado para classes e variáveis
+UPPER_CASE_SNAKE_CASE - declarar constantes
+
+let só tem escopo de bloco. é necessário declarar a variável antes de utiliza-la
+
+var é utilizado para declarar uma variável global
+const é utilizado para declarar valores que não serão alterados
+const FIRST_NAME = "Khertlyn"
+
+Estruturas de dados
+Tipagem dinâmica
+
+Strings 
+ex: let fullName = 'nome completo: ${firstName} ${LastName};
+"\n" quebra linha
+
+concatenar
+concatenado = firstName.concat(lastName)
+
+métodos **** pesquisar melhor
+length = 
+split = ("") separa todas as letras , (" ")separa onde aparece espaço
+variavel.includes("tudo") = verifica se a palavra existe na variavel
+variavel.replace substitui o primeiro valor pelo segundo
+let "nomeVariavel" = "variavel.replace(",","!") atribui
+
+
+números
+Math.floor(variavel) = Arredonda para baixo
+Math.ceil(variavel) = Arredonda para baixo
+
+para lidar com % utiliza string para exibir número em porcentagem deve utilizar concatenação
+
+booleans
+sempre que faz comparação retorna um valor booleano
+ex.: let validation = 3 === 0 
+validation false
+se colocar uma ! antes vai retornar valor oposto
+
+Arrays
+Lista iterável de elementos
+let array = []
+
+funciona com vários métodos
+array.push(3) acrescenta o número 3 no array
+array.pop(3) tira o último elemento no array
+
+
+Objetos
+
+let person = {aqui dentro posso declarar chaves e valores ex: name:"Julia" age:20};
+person.adress = "Rua Visconde de Maua"
+object.values(person)
+object.keys(person)
+
+Empty = somente inicializou o valor
+null = valor nao existe, não é false nem true
+Undefined = 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
