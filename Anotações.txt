@@ -88,7 +88,7 @@ se colocar uma ! antes vai retornar valor oposto
 
 Arrays
 Lista iterável de elementos
-let array = []
+ex. : let array = []
 
 funciona com vários métodos
 array.push(3) acrescenta o número 3 no array
@@ -105,6 +105,226 @@ object.keys(person)
 Empty = somente inicializou o valor
 null = valor nao existe, não é false nem true
 Undefined = 
+
+
+Funções
+Estrutura
+function nome(parametros){
+
+return; // valor de retorno, a função para de ser executada
+}
+
+função auto invocável declara dentro de parenteses e coloca ()depois que pode ser colocado valores. Não pode receber parâmetros
+Parâmetros
+valores padrão
+ex.:
+(
+function(a, b) {
+return a + b;
+}
+)(1, 2);
+console.log(soma3)
+
+
+
+Spread: uma forma de lidar separadamente com elementos
+function sum(x, y, z) {
+return x + y + z;
+}
+const numbers = [1,2,3];
+console.log(sum(...numbers));
+
+Spread: uma forma de lidar separadamente com elementos
+function sum(x, y, z) {
+return x + y + z;
+}
+const numbers = [1,2,3];
+console.log(sum(...numbers));
+
+rest: Combina os argumentos em um array
+function confereTamanho(...args) {
+console.log(args.length)
+}
+confereTamanho()
+confereTamanho(1, 2)
+confereTamanho(3, 4, 5)
+
+Object destruturing
+entre chaves {}, podemos filtrar apenas os dados que nos interessam em um objeto
+
+If / Else
+Switch/case (compara tipo e valor ===)
+Ex.:
+Funtion getAnimal(id) {
+switch(id) {
+case 1:
+return "cão";
+case 2:
+return "gato";
+case 3:
+return "cavalo";
+default
+return "peixe";
+
+for
+Loop dentro de elementos iteráveis (arrays, strings)
+
+forin
+Loope entre propriedades enumeráveis de um objeto
+
+while
+Executa instrução até que a condição se torne falsa
+
+do while
+Executa instrução até que a condição se torne falsa
+mas executa pelo menos uma vez
+
+this
+Sempre que uma função está dentro de um objeto é chamado de método
+diferença entre apply e call
+soma.apply(myObj,[1,5]); nesse posso passar argumentos dentro de array
+
+bind
+clona a estrutura da função e aplica o valor do objeto passado como parametro
+let nomedafuncao = nomedafuncaoaserclonada.bind({ nome: 'Bruno' });
+
+
+sintaxe
+
+
+Estrutura myMAP
+const myMap = new Map()
+
+métodos
+myMap.set('apple', 'fruit'); adiciona o valor fruit a chave apple
+myMap.get('apple'); retorna o valor da chave apple
+myMap.delete('apple');deleta
+
+diferença entre Map e Objeto
+Maps podem ter chave de qualquer tipo Ex: número , string
+Maps possuem a propriedade length
+Maps são mais fáceis de iterar
+utilizado quando o valor das chaves é desconhecido
+Os valores do Map tem o mesmo tipo
+
+set coleção chaveada
+estruturas que armazenam valores únicos
+métodos possíveis : .add , .has, .delete, .size.
+
+
+MÉTODOS maps , filter e reduce
+
+Map
+cria um novo array, não modifica o original e realiza opeçãoes em ordem.
+sintaxe
+array.map(callbak, thisArg(opcional))
+const array = [1, 2, 3 ,4 ,5];
+array.map((item) => item*2;
+comparação Map vs forEach
+
+Filter
+Cria um novo array
+sintaxe
+array.filter(callbak, thisArg(opcional))
+const frutas = ['maça fuji, 'maça verde', 'laranja'];
+array.filter((fruta) => fruta.includes('maça'))
+
+Reduce
+não retorna um novo array, retorna um valor único;
+sintaxe
+array.reduce(callbackFn, initialValue(opcional))
+const callbackFn = function(accumulator, currentValue, index, array) { do someting
+}
+array.reduce(callbackFn, initialValue)
+
+Erros
+function validaArray(arr, num) {
+    try{
+    if(!arr && !num) throw new ReferenceError("envie os parâmetros");
+    
+    if(typeof arr !== 'object') 
+        throw new TypeError('Array precisa ser objeto');
+    
+    if(typeof num !== 'number') 
+        throw new TypeError('Num precisa ser número');
+    
+    if (arr.length !== num) 
+        throw new RangeError ('Tamanho inválido');
+    
+        return arr;
+    }
+    catch(e){
+        if(e instanceof ReferenceError) {
+            console.log('Este erro é um reference error');
+            console.log(e.name);
+            console.log(e.message);
+        }
+        else if(e instanceof TypeError) {
+            console.log('Este erro é um type error');
+            console.log(e.name);
+            console.log(e.message);
+        }
+        else if(e instanceof RangeError) {
+            console.log('Este erro é um range error');
+            console.log(e.name);
+            console.log(e.message);
+        }
+        else {
+            console.log('tipo de erro não esperado' + e);
+        }
+    }
+}
+arr = [1, 2, 3, 4, 5];
+num = 5;
+console.log(validaArray(arr, num));
+
+Assincronissidade
+async function resolvePromise(){
+	const myPromise = new Promise((resolve, reject) => {
+		window.setTimeout(() => {
+			resolve('Resolvida');
+		},3000);
+	});
+	let result;
+	
+	try {
+	result = await myPromise
+		.then((result) => result + 'passando pelo then')
+		.then((result) = result + 'e agora acabou')
+	}
+	catch(err) {
+		result = err.message;
+	}
+	return result;
+}
+
+APIS = Aplication Programming Interface
+JSON = JavaScript Object Notation
+fetch retorna uma promissa - preciso utilizar await
+Operações no banco
+
+orientação a Objetos
+abstração = isolar aspecto determinado
+herança=
+encapsulamento=
+Polimorfismo=
+
+OOJS
+Protótipos esqueleto de todos os objetos
+syntatic sugar = feita para facilitar a escrita
+o java script não possui classes nativamente
+
+
+Módulo
+
+
+
+
+
+
+
+
+
 
 
 
