@@ -7,6 +7,8 @@
     <title>Estacionamento</title>
 </head>
 <body>
+    <h1>Meu 1º Sistema de Estacionamento</h1>
+    <h2>Insira as informações abaixo</h2>
     <input 
         type="text" 
         id="nome" 
@@ -17,14 +19,22 @@
         id="placa" 
         placeholder="Digite a placa do veículo: " 
         autocomplete="off"/>
+    <select name="select" id ="tipo">
+        <option value="moto">Moto</option>
+        <option value="carro">Carro</option>
+    </select>
     <button id="cadastrar">Cadastrar</button>
-
-    <table>
+    <br>
+    <br>
+    <h3>Veículos no pátio</h3>
+    <table border="1">
         <thead>
             <tr>
                 <th>Nome</th>
                 <th>Placa</th>
                 <th>Entrada</th>
+                <th>Tipo</th>
+                <th>Tarifa</th>
                 <th>Ações</th>
             </tr>
         </thead>

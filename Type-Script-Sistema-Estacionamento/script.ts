@@ -2,6 +2,8 @@ interface Veiculo{
     nome: string;
     placa: string;
     entrada: Date | string;
+    tipo?: string;
+    tarifa: number;
 }
 
 (function(){
@@ -11,8 +13,7 @@ interface Veiculo{
     function calcTempo(mil: number){
         const min = Math.floor(mil / 60000);
         const sec = Math.floor(mil % 60000) / 1000;
-
-        return `${min}m e ${sec}s`;
+        return `${min}m e ${sec}s`;     
     }
 
     function patio() {
@@ -30,6 +31,8 @@ interface Veiculo{
                 <td>${veiculo.nome}</td>
                 <td>${veiculo.placa}</td>
                 <td>${veiculo.entrada}</td>
+                <td>${veiculo.tipo}</td>
+                <td>${veiculo.tarifa}</td>
                 <td>
                     <button class="delete" data-placa="${veiculo.placa}">X</button>
                 </td>
@@ -47,14 +50,18 @@ interface Veiculo{
             const {entrada, nome } = ler().find(
                 (veiculo) => veiculo.placa===placa
                 );
-            
             const tempo = calcTempo(new Date().getTime() - new Date(entrada).getTime());
-            
+            /*const {tarifa} = ler().find(
+                (veiculo) => veiculo.tarifa===tarifa
+                );*/
+            const valorTarifa = 0.10//tarifa;
+            const valor = ((parseInt(tempo)) * valorTarifa).toFixed(2);
             if (
-                confirm(`O veículo ${placa} permaneceu por ${tempo}. Deseja encerrar?`)
+                !confirm(`O veículo ${placa} permaneceu por ${tempo}.
+                O valor da Tarifa por minuto é R$ ${valorTarifa} 
+                O valor a pagar é:R$ ${valor} Deseja encerrar?`)
                 )
                 return;
-
             salvar(ler().filter((veiculo)=>veiculo.placa !== placa));
             render();
         }
@@ -74,11 +81,13 @@ patio().render();
 $("#cadastrar")?.addEventListener("click", () => {
     const nome = $("#nome")?.value;
     const placa = $("#placa")?.value;
+    const tipo = $("#tipo")?.value;
+    const tarifa = tipo ==='moto' ? 0.10 : 0.15;
 
-    if(!nome || !placa){
-        alert("É obrigatório o preenchimento dos campos : Nome e Placa");
+    if(!nome || !placa || !tipo){
+        alert("É obrigatório o preenchimento de todos os campos");
         return;
     }
-    patio().adicionar({nome, placa, entrada: new Date().toISOString() }, true);
+    patio().adicionar({nome, placa, entrada: new Date().toISOString(), tipo, tarifa}, true);
 });
 })();

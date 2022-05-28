@@ -3,7 +3,7 @@
     const $ = (query) => document.querySelector(query);
     function calcTempo(mil) {
         const min = Math.floor(mil / 60000);
-        const sec = Math.floor(mil / 60000) / 1000;
+        const sec = Math.floor(mil % 60000) / 1000;
         return `${min}m e ${sec}s`;
     }
     function patio() {
@@ -20,6 +20,8 @@
                 <td>${veiculo.nome}</td>
                 <td>${veiculo.placa}</td>
                 <td>${veiculo.entrada}</td>
+                <td>${veiculo.tipo}</td>
+                <td>${veiculo.tarifa}</td>
                 <td>
                     <button class="delete" data-placa="${veiculo.placa}">X</button>
                 </td>
@@ -34,7 +36,14 @@
         function remover(placa) {
             const { entrada, nome } = ler().find((veiculo) => veiculo.placa === placa);
             const tempo = calcTempo(new Date().getTime() - new Date(entrada).getTime());
-            if (confirm(`O veículo ${placa} permaneceu por ${tempo}. Deseja encerrar?`))
+            /*const {tarifa} = ler().find(
+                (veiculo) => veiculo.tarifa===tarifa
+                );*/
+            const valorTarifa = 0.10; //tarifa;
+            const valor = ((parseInt(tempo)) * valorTarifa).toFixed(2);
+            if (!confirm(`O veículo ${placa} permaneceu por ${tempo}.
+                O valor da Tarifa por minuto é R$ ${valorTarifa} 
+                O valor a pagar é:R$ ${valor} Deseja encerrar?`))
                 return;
             salvar(ler().filter((veiculo) => veiculo.placa !== placa));
             render();
@@ -50,13 +59,15 @@
     }
     patio().render();
     (_a = $("#cadastrar")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", () => {
-        var _a, _b;
+        var _a, _b, _c;
         const nome = (_a = $("#nome")) === null || _a === void 0 ? void 0 : _a.value;
         const placa = (_b = $("#placa")) === null || _b === void 0 ? void 0 : _b.value;
-        if (!nome || !placa) {
-            alert("É obrigatório o preenchimento dos campos : Nome e Placa");
+        const tipo = (_c = $("#tipo")) === null || _c === void 0 ? void 0 : _c.value;
+        const tarifa = tipo === 'moto' ? 0.10 : 0.15;
+        if (!nome || !placa || !tipo) {
+            alert("É obrigatório o preenchimento de todos os campos");
             return;
         }
-        patio().adicionar({ nome, placa, entrada: new Date().toISOString() }, true);
+        patio().adicionar({ nome, placa, entrada: new Date().toISOString(), tipo, tarifa }, true);
     });
 })();
