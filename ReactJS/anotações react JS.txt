@@ -1,0 +1,91 @@
+React Script foi criado pelo facebook
+
+permite programar em HTML E javaScript em um mesmo arquivo,  usando método DOM renderização, para passar comandos js utilizar chaves.
+encapsular dentro de div(s)
+Ex. Estrutura padrão
+import React, {fragment} from "react"
+import ReactDOM from "react-dom"
+import "./styles.css"
+
+const element = 'Digital Innovation'
+const element2 = <h1> Olá mundo </h1>
+
+function App() {
+	return (
+	<div>
+	  {element}
+	  {element2}
+	</div>
+	)
+}
+const rootElement = document.getElementById("root")
+ReactDOM.render(<app />, rootElement)
+
+Usa-se componentes
+o mais puro possível
+padrão camel case( primeira maiuscula )
+
+Estado e ciclo de vida
+Inicialização
+Montagem
+Atualização
+Desmontagem
+
+WebPack -empacotador de modulo para aplicações JS module bunder
+
+criar arquivo packgejson comando npm init
+Loader- permite gerenciar arquivos que nao sao js
+Mode = Production, Development ou nome
+configuração
+->npm i -D webpack webpack-cli
+->dentro do arquivo package.json acrescentar o script
+"build" : "webpack --mode production"
+
+->criar um arquivo webpack.config.js
+const path = require('path')
+
+module.exports = {
+    entry:'./teste.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),//nome da pasta onde o arquivo vai gerar
+        filename:'bundler.js'
+    }
+}
+
+npm i @babel/core babel-loader @babel/preset-env @babel/preset-react -D
+
+criar arquivo .babelrc
+{
+    "presets": [
+        "@babel/preset-env",
+        "@babel/preset-react"
+    ]
+}
+
+no arquivo html  dentro do body chamar a div app
+    <div id="app"></div>
+
+npm i react react-dom
+npm i -D babel-preset-react
+
+preciso ter um arquivo index.html e um App.jsx
+
+npm i -D html-webpack-plugin html-loader
+
+npm i webpack-dev-server
+
+acrescentar no package.json script
+    "dev": "webpack --mode development",
+    "start:dev": "webpack-dev-server"
+
+npm run start:dev
+
+ 
+EsLint - utilizado para manter a qualidade do código
+instalação
+npm i -D eslint babel-eslint eslint-plugin-react eslint-watch
+
+
+
+
+
