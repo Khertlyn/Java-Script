@@ -84,6 +84,22 @@ npm run start:dev
 EsLint - utilizado para manter a qualidade do código
 instalação
 npm i -D eslint babel-eslint eslint-plugin-react eslint-watch
+criar arquivo com as configurações
+
+posso criar condição utilizando operador lógico &&
+para criar ifelse, utiliza ?
+para não renderizar um bloco devo retornar a verificação nula,
+
+Manipulando Eventos com React
+Eventos em react são nomeados camelCase
+const Button = <button onClick={showEvent}>Mostrar Evento</button>
+
+Dicas
+
+Module o maximo possível
+
+
+
 
 
 
