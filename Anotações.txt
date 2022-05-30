@@ -316,6 +316,50 @@ o java script não possui classes nativamente
 
 
 Módulo
+Vantagens
+Organização do código
+Compartilhar variáveis em escopos diferentes
+Explicita as dependências do arquivo
+
+export palavra reservada 
+export deafult (só pode ser um)
+import {nome da classe,nome de outra classe} from './arquivo.js'
+posso dar apelido para a funcção
+import {arquivo as apelido}...
+import * as INFOS from '.arquivo.js'; 
+
+No HTML preciso colocar 
+<script type="module" src=".main,js"></script>
+
+BOM Browser Object Model
+DOM Document Object Model
+para selecionar elementos de uma pagina posso utilizar
+document.getElementById('título');
+document.getElementsBytagName('li');
+document.getElementsByClassName('textos');
+document.querySelectorAll('.primeira-classe .segunda-classe');
+document.querySelectorAll('li .opcao');
+document.createElement(element)
+document.removeChild(element)
+document.appendChild(element)
+document.replaceChild(new, old)
+
+ESTILOS
+element.classList
+meuElemento.classList.toggle /verifica se a classe existe e exclui ou vice versa
+
+EVENTOS
+mouseover , mouseout , click, dbclick, change, load, 
+Event listener
+const botao = document.getElementById("meuBotao");
+botao.addEventListener("click", outraFuncao);
+
+
+typedScript
+
+
+
+
 
 
 
