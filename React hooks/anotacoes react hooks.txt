@@ -1,0 +1,55 @@
+com o arquivo jsonconfigurado posso dar o comando npm install (para instalar os pluggins configurados no arquivo) e npm start para iniciar a aplicação.
+
+para garantir que o comportamento esperado esteja acontecendo crio um arquivo .test.js e escrevo o que espero do teste.
+
+import { render, screen } from '@testing-library/react'; 
+import { Button } from './Button';
+
+test('renders button with text', () => {
+  render(<Button>Test</Button>);
+
+  const buttonEl = screen.getByText(/Test/i);
+
+  expect(buttonEl).toBeInTheDocument();
+});
+
+
+
+import narutoImg from '../../images/naruto.png';
+return (
+    <Content>
+      <Quotes {...quote} onUpdate={onUpdate} />
+      <NarutoImg alt="Naruto holding a kunai" src={narutoImg} />
+    </Content>
+  );
+
+import {rest} from'msw';
+import {setupServer } from 'msw/node';
+bibliotecas usadas para mockar faz com que o servidor responda com algo que eu defino
+
+
+import styled from 'styled-components';
+bliblioteca muito usada
+vh, altura da tela
+vw, largura da tela
+2em, o dobro do tamanho da fonte do body
+
+em react não posso retornar dois elementos ,a solução é encapsular dentro de divs
+background-size: cover; garante que o fundo vai cobrir a tela inteira
+
+tipar propriedade é uma boa prática
+import {string} from 'prop-types';
+Quotes.propTypes = {
+quote: string,
+speaker: string
+};
+facilita encontrar apresente erro , e receba algum valor diferente do esperado
+
+Boa prática - criar um arquivo .env na raiz do projeto
+são variáveis de ambientes
+REACT_APP_API= Endereço que desejo substituir
+
+import { useState, useEffect, useRef } from 'react';
+book react - cria um estado
+
+
