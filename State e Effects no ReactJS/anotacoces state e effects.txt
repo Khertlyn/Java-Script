@@ -1,1 +1,31 @@
 npx create-react-app aula-hooks
+
+boas praticas para organizar o projeto
+
+criar pasta components
+Sempre que for usar estado do componente declarar a variável set(e o que está guardando)
+
+Criar componentes utilizando estado - gancho
+import {useState} from 'react';
+
+
+function SmartCounter(){
+
+    const [quantity, upQuantity]= useState(1);
+
+    return (
+        <>
+            <h1>{quantity}</h1>
+            <button onClick={()=> upQuantity (quantity + 1)}>Aumentar</button>
+        </>
+    )
+}
+
+export default SmartCounter;
+
+
+UseEffect - efeitos colaterais
+    useEffect(()=>{
+        document.getElementById("moeda").innerHTML = 2.00 * value;
+    },[value])
+

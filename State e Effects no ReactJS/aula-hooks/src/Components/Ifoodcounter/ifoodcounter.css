@@ -1,0 +1,12 @@
+.counter-button-minus-desactive {
+    color: grey;
+}
+
+.counter-button-minus-active {
+    color: red;
+}
+
+.counter-button-plus-active{
+    color:red;
+}
+
