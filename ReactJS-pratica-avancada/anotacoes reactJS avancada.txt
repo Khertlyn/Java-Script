@@ -1,0 +1,116 @@
+ciclo de vida
+inicialização = props e state
+montagem = componentWillMount -> render -> componentDidMount
+atualizacao = componentWillReceiveProps...
+desmontagem = componentWillUnmont
+
+npx create-react-app advanced-reatjs-dio
+pasta src -> app.js
+apaga tudo
+
+hooks - não utiliza classe, normalmente cria função
+quando vou usar hooks espera que passe umafunção, exemplo
+
+useEffect(() => {
+
+},[]) quando passo o [] vazio é equivalente ao componentDidMount pois ele vai montar apenas uma vez, se passar algum valor será o que o programa irá monitorar
+
+useEffect
+
+
+Fragmentos 
+import React, { Fragment} from 'react'
+<Fragment> ou <> uso para encapsular
+
+em iteração de lista preciso retornar uma key pro react
+
+Ex:
+import React, { Fragment } from 'react';
+
+const store = ['', '', '']
+
+function Column() {
+    return (
+        <tr>
+            <td> Tênis </td>
+            <td> Roupa </td>
+        </tr>
+    )
+}
+
+function App(){
+
+    const renderColumns = (element, key) => {
+        <Fragment key={`Column-${key}`}>
+            <Column />
+        </Fragment>
+    }
+    return (
+        <>
+        <h1>teste</h1>
+        <table>
+            {store.map(renderColumns)}
+        </table>
+        </>
+    )
+}
+
+export default App
+
+error boundary 
+cria um arquivo ErrorBoundary.js
+dentro dele um componente 
+class ErrorBoundary extends Component {
+
+render Props
+Técnica de compartilhar código entre componentes React
+utilizado quando deseja reaproveitar elementos
+
+typechecking
+import PropTypes from 'prop-types'
+
+PetShop.defaultProps = {
+cats: 0,
+customers: []
+}
+PetShop.propTypes = {
+dogs: PropTypes.number.isRequired,
+onClick: PropTypes.func.isRequired
+status: PropTypes.oneOf(["completed","disabled"])
+}
+fazendo essa tipificação restrinjo o tipo de dados
+pode ser array, bool, func, number, object,string
+
+
+Refs e DOM
+
+import React, { useRef} from 'react'
+
+inputRef.current.focus() 
+muito util para comparar o valor atual com valor antigo sem renderizar a pagina
+
+Dumb components- componente burro
+pode ser função ou constante
+
+Smart Components
+Preocupam-se como as coisas vão funcionar
+utilizar memo para evitar re-render desnecessário
+
+
+Organização de projeto
+dentro da pasta src
+index.js = aplicação inicial
+app.js = tudo que for global
+*pasta components = pasta Button, etc.. cria arquivo index.js e importa todos components e export
+*pasta containers = pasta User = pasta Store = pasta Shop = pasta Bank
+*pasta routes = um arquivo index.js exportando todas as rotas para importa no app.js
+*pasta resources = um arquivo api.js, um arquivo com as chamadas de serviço que retorna uma promisse
+*pasta commons = umas pasta constants  posso ter um arquivo menu.js como a const menu e atributos da *pasta containers= uma pasta utils dentro da pasta util um arquivo string.js , utilizado para tratar validações, ex: CPF um pasta assets = uma pasta imgs = uma pasta style = somente coisas globais
+
+os testes deixo na mesma pasta
+
+
+
+
+
+

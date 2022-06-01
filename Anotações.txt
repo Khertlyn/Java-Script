@@ -1,4 +1,4 @@
-Linguagem interpretada
+﻿Linguagem interpretada
 
 Para comentar uma linha //
 Para comentar mais de uma linha utilizar 
@@ -215,7 +215,7 @@ métodos possíveis : .add , .has, .delete, .size.
 MÉTODOS maps , filter e reduce
 
 Map
-cria um novo array, não modifica o original e realiza opeçãoes em ordem.
+cria um novo array, não modifica o original e realiza operações em ordem.
 sintaxe
 array.map(callbak, thisArg(opcional))
 const array = [1, 2, 3 ,4 ,5];
@@ -322,9 +322,9 @@ Compartilhar variáveis em escopos diferentes
 Explicita as dependências do arquivo
 
 export palavra reservada 
-export deafult (só pode ser um)
+export default (só pode ser um)
 import {nome da classe,nome de outra classe} from './arquivo.js'
-posso dar apelido para a funcção
+posso dar apelido para a função
 import {arquivo as apelido}...
 import * as INFOS from '.arquivo.js'; 
 

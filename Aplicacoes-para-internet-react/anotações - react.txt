@@ -1,0 +1,68 @@
+Estilização
+Inline
+Classe
+CSS in JS -> npm install --save styled-components
+
+formulários
+bibliotecas
+formik
+redux-forms
+
+Flux é um padrão de projeto
+action - formata a mensagem a ser enviada
+Dispatcher - sabe todos os callbacks para diferentes stores
+Stores - Guarda a informaçõoe todas as alterações tem que ser feitas por ele
+View-
+Redux - Principios
+Uma única store
+state read-only
+
+pacotes 
+npm install react-redux
+npm install -D redux-devtools
+instalar o pluggin redux devtools
+
+APIs HTTP
+Fetch API
+
+Imutabilidade e Redux
+ShouldComponentUpdate
+
+React.PureComponent
+
+redux + rest
+middlewares redux
+redux-thunk
+yarn add redux-thunk
+
+
+TDD -Test-Driven Development
+antecipar erros
+
+Teste unitário
+teste End-to-End - testa o fluxo
+
+bibliotecas para testes
+React-testing-library
+Jest
+Shallow
+
+BDD Behavior-Driven Development
+Gherkin - sintaxe de steps
+
+jest-cucumber
+yarn add --dev jest-cucumber
+cria um arquivo .feature e linka no arquivo .test.js
+
+
+Debugging
+Ferramentas
+React Developer tools
+
+Tratamento de erros
+Resiliencia de SW
+segurança
+
+
+
+
