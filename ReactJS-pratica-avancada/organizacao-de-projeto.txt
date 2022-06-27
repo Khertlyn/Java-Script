@@ -1,0 +1,11 @@
+Organização de projeto
+dentro da pasta src
+index.js = aplicação inicial
+app.js = tudo que for global
+*pasta components = pasta Button, etc.. cria arquivo index.js e importa todos components e export
+*pasta containers = pasta User = pasta Store = pasta Shop = pasta Bank
+*pasta routes = um arquivo index.js exportando todas as rotas para importa no app.js
+*pasta resources = um arquivo api.js, um arquivo com as chamadas de serviço que retorna uma promisse
+*pasta commons = umas pasta constants  posso ter um arquivo menu.js como a const menu e atributos da *pasta containers= uma pasta utils dentro da pasta util um arquivo string.js , utilizado para tratar validações, ex: CPF um pasta assets = uma pasta imgs = uma pasta style = somente coisas globais
+
+os testes deixo na mesma pasta

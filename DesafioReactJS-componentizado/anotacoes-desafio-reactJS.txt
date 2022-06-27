@@ -1,0 +1,3 @@
+Cada componente deve ter apenas uma responsabilidade
+axios = biblioteca utilizada para consumir http facilmente
+

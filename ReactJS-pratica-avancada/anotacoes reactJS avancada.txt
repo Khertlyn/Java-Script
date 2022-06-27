@@ -110,6 +110,24 @@ app.js = tudo que for global
 os testes deixo na mesma pasta
 
 
+DevTools - toolkit
+
+melhores praticas
+Redux Style Guide
+*Não altere o estado
+*ao ler o codigo preciso ter previsibilidade
+*Utilizar apenas valores serializaveis
+*Apenas uma store redux por APP
+
+Gerenciando a store Redux
+Pattern 
+Ducks - 
+Higher-Order-Reducers - Encapsular lógica
+Component Containers -
+
+Hooks em React Reducer
+
+
 
 
 
